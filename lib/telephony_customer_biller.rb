@@ -1,59 +1,47 @@
 # encoding: utf-8
 
+require './lib/net_suite'
+require 'yaml'
+require 'pp'
+
 class TelephonyCustomerBillerError < Exception
 end
 
 class TelephonyCustomerBiller
-	def initialize(options={})
+	def initialize(options)
+		raise TelephonyCustomerBillerError.new("invalid options, you must provide a hash") if options.class != Hash
+		raise TelephonyCustomerBillerError.new("invalid options, you must provide a customer_id") if !options[:customer_id]
+		current_time = Time.now
+		options[:year] = current_time.year unless options[:year]
+		options[:month] = current_time.month unless options[:month]
+		@customer_id, @year, @month = options[:customer_id], options[:year], options[:month]
+	end
 
-		raise TelephonyCustomerBillerError.new("Papas") unless @customer_id =~ /^\d+$/ and  @year =~ /^(19|20)[0-9][0-9]$/ and @month =~ /^([1-9]|1[0-2])$/
-
-		@customer_id = (options[:customer_id]||'').to_s.strip
-		@year = (options[:year]||'').to_s.strip
-		@month = (options[:year]||'').to_s.strip
-
-		raise TelephonyCustomerBillerError.new("Papas") unless @customer_id =~ /^\d+$/ and  @year =~ /^(19|20)[0-9][0-9]$/ and @month =~ /^([1-9]|1[0-2])$/
-
-		@customer_id, @year, @month = @customer_id.to_i, @year.to_i, @month.to_i
-
-		pp @customer_id, @year, @month
-
+	def fetch_billing_info
+		response = NetSuite.call(action: "customer", customer_id: @customer_id)
+		puts response.data.to_yaml
+		exit
+		if response.status == :ok
+			@customer = response.data[:billing_info][:customer]
+			@origins = response.data[:billing_info][:origins]
+			@rates = response.data[:billing_info][:rates]
+			@trunk_types = response.data[:billing_info][:trunk_types]
+			@global_rates = response.data[:billing_info][:global_rates]
+			return true
+		else
+			raise TelephonyCustomerBillerError.new("error fetching configuration for customer #{@customer_id} : #{respose.inspect}")
+		end
 	end
 
 	private
 
-	def check_options(options={})
-		time_now = Time.now
-
-		options[:customer_id] ||= ""
-		options[:year] ||= ""
-		options[:month] ||= ""
-
-		if !options[:year] and !options[:month]
-			if time_now == 1
-				options[:year] = time_now.year-1
-				options[:month] = 12
-			else
-				options[:year] = time_now.year
-				options[:month] = time_now.month-1
-			end
-		end
-
-
-		raise TelephonyCustomerBillerError.new("options is not a hash (#{options.class.to_s} :: #{options.inspect})") unless options.class == Hash
-		raise TelephonyCustomerBillerError.new("invalid customer_id") unless options[:customer_id].to_s.strip =~ /^\d+$/
-		raise TelephonyCustomerBillerError.new("invalid year") unless options[:year].to_s.strip =~ /^(19|2[0-2])\d\d$/
-		raise TelephonyCustomerBillerError.new("invalid month ") unless  (options[:customer_id]||'').to_s.strip =~ /^([1-9]|1[0-2])$/
-		raise TelephonyCustomerBillerError.new("") unless
-		raise TelephonyCustomerBillerError.new("") unless
-		raise TelephonyCustomerBillerError.new("") unless
-		raise TelephonyCustomerBillerError.new("") unless
-		raise TelephonyCustomerBillerError.new("") unless
-		raise TelephonyCustomerBillerError.new("") unless
-
-	end
-
 end
 
+tcb = TelephonyCustomerBiller.new(customer_id: 4941)
+tcb.fetch_billing_info
+pp tcb
 
-TelephonyCustomerBiller.new(14487)
+
+
+
+__END__
