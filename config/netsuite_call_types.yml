@@ -1,0 +1,16 @@
+:netsuite_call_types:
+  1: :mx_locales
+  2: :mx_cellocal
+  3: :mx_celnacional
+  4: :mx_ldnacional
+  5: :mx_uscanada
+  6: :mx_tollfreemx
+  7: :mx_tollfreeus
+  8: :us_local
+  9: :us_nationalld
+  10: :us_mexicold
+  11: :us_mexicomobilejrz
+  12: :us_mexicomobile
+  13: :us_mexicojuarez
+  14: :us_tollfree
+  15: :us_mexicotollfree

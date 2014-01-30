@@ -1,3 +1,8 @@
+# encoding: utf-8
+
+require 'yaml'
+require 'pry'
+
 Configuration.config do |config|
 	# Local database configuration
 	config.local.hostname = '127.0.0.1'
@@ -23,5 +28,26 @@ Configuration.config do |config|
 		"Core-Verizon 2way 2",
 		"Core-Yate-MX",
 		"Core-Yate-US"
+	]
+
+	config.call_types[:americana] = [
+		:us_local,
+		:us_nationalld,
+		:us_mexicold,
+		:us_mexicomobilejrz,
+		:us_mexicomobile,
+		:us_mexicojuarez,
+		:us_tollfree,
+		:us_mexicotollfree
+	]
+
+	config.call_types[:mexicana] = [
+		:mx_locales,
+		:mx_cellocal,
+		:mx_celnacional,
+		:mx_ldnacional,
+		:mx_uscanada,
+		:mx_tollfreemx,
+		:mx_tollfreeus
 	]
 end

@@ -38,8 +38,9 @@ class MvtsCdr < ActiveRecord::Base
   def clean
     {
         _id: cdr_id.to_i,
-        gateway_name: (src_name||'').strip,
-        originator: (remote_src_sig_address||'').gsub(/\:.*$/,''),
+        gateway: (src_name||'').strip,
+        host: (remote_src_sig_address||'').gsub(/\:.*$/,''),
+        identifier: in_ani.strip,
         call_date: cdr_date,
         source: clean_id(in_ani),
         destination: clean_id(out_dnis),
@@ -59,6 +60,7 @@ class MvtsCdr < ActiveRecord::Base
         gsub(/^((656|614)\d{7})$/, '52\1').
         gsub(/^(55\d{8})$/, '52\1').
         gsub(/^(04[45]\d{10})$/, '52\1').
-        gsub(/^((915|919|956)\d{7})$/, '1\1')
+        gsub(/^((915|919|956)\d{7})$/, '1\1').
+        gsub(/^001(\d+)$/, '1\1')
   end
 end

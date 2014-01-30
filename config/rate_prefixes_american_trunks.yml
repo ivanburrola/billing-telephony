@@ -1,0 +1,548 @@
+:us_local:
+  "1915": US - Texas
+:us_mexicomobilejrz:
+  "52044656": Mexico - Mobile - Juarez
+:us_mexicomobile:
+  "52045": Mexico - Mobile
+  "521": Mexico - Mobile
+:us_mexicojuarez:
+  "52656": Mexico - Ciudad Juarez
+:us_tollfree:
+  "1800": Toll Free
+  "1811": Toll Free
+  "1822": Toll Free
+  "1833": Toll Free
+  "1844": Toll Free
+  "1855": Toll Free
+  "1866": Toll Free
+  "1877": Toll Free
+  "1888": Toll Free
+  "1899": Toll Free
+  "1880": Toll Free
+  "1881": Toll Free
+  "1882": Toll Free
+  "1883": Toll Free
+  "1884": Toll Free
+  "1885": Toll Free
+  "1886": Toll Free
+  "1887": Toll Free
+  "1889": Toll Free
+:us_mexicotollfree:
+  "52800": Mexico - Toll Free
+:us_mexicold:
+  "52": Mexico
+  "52325": Mexico - Acaponeta
+  "52744": Mexico - Acapulco
+  "52772": Mexico - Actopan
+  "52449": Mexico - Aguascalien
+  "52862": Mexico - Allende
+  "52731": Mexico - Amayuca
+  "52597": Mexico - Amecamea
+  "52453": Mexico - Apatzingan
+  "52241": Mexico - Apizaco
+  "52732": Mexico - Arcelia
+  "52633": Mexico - Argua Priet
+  "52712": Mexico - Atlacomulco
+  "52244": Mexico - Atlixco
+  "52391": Mexico - Atotonilco
+  "52317": Mexico - Autlan
+  "52769": Mexico - Axochiapan
+  "52637": Mexico - Caborca
+  "52828": Mexico - Cadereyta
+  "52981": Mexico - Campeche
+  "52645": Mexico - Cananea
+  "52998": Mexico - Cancun
+  "52294": Mexico - Catemaco
+  "52791": Mexico - Cd. Sahagun
+  "52461": Mexico - Celaya
+  "52892": Mexico - Cerralvo
+  "52983": Mexico - Chetumal
+  "52614": Mexico - Chihuahua
+  "52756": Mexico - Chilapa
+  "52747": Mexico - Chilpancing
+  "52823": Mexico - China
+  "52877": Mexico - Ciudad Acun
+  "52767": Mexico - Ciudad Alta
+  "52891": Mexico - Ciudad Cama
+  "52648": Mexico - Ciudad Cama
+  "52613": Mexico - Ciudad Cons
+  "52727": Mexico - Ciudad De H
+  "52938": Mexico - Ciudad Del
+  "52676": Mexico - Ciudad Guad
+  "52341": Mexico - Ciudad Guzm
+  "52786": Mexico - Ciudad Hida
+  "52831": Mexico - Ciudad Mant
+  "52644": Mexico - Ciudad Obre
+  "52481": Mexico - Ciudad Vall
+  "52921": Mexico - Coatzacoalc
+  "52312": Mexico - Colima
+  "52963": Mexico - Comitan
+  "52327": Mexico - Compostela
+  "52271": Mexico - Cordoba
+  "52411": Mexico - Cortazar
+  "52987": Mexico - Cozumel
+  "52625": Mexico - Cuauhtemoc
+  "52735": Mexico - Cuautla
+  "52777": Mexico - Cuernavaca
+  "52667": Mexico - Culiacan
+  "52639": Mexico - Delicias
+  "52418": Mexico - Dolores Hid
+  "52618": Mexico - Durango
+  "52475": Mexico - Encarnacion
+  "52646": Mexico - Ensenada
+  "52493": Mexico - Fresnillo
+  "5233": Mexico - Guadalajara
+  "52673": Mexico - Guamuchil
+  "52473": Mexico - Guanajuato
+  "52687": Mexico - Guasave
+  "52622": Mexico - Guaymas
+  "52615": Mexico - Guerrero Ne
+  "52662": Mexico - Hermosillo
+  "52829": Mexico - Hidalgo
+  "52953": Mexico - Huajuapan
+  "52647": Mexico - Huatabampo
+  "52958": Mexico - Huatulco
+  "52435": Mexico - Huetamo
+  "52917": Mexico - Huimanguill
+  "52733": Mexico - Iguala
+  "52462": Mexico - Irapuato
+  "52283": Mexico - Isla
+  "52721": Mexico - Ixtapan De
+  "52324": Mexico - Ixtlan Del
+  "52243": Mexico - Izucar de M
+  "52228": Mexico - Jalapa
+  "52463": Mexico - Jalpa
+  "52494": Mexico - Jerez
+  "52734": Mexico - Jojutla
+  "52971": Mexico - Juachitan
+  "52393": Mexico - La Barca
+  "52612": Mexico - La Paz
+  "52352": Mexico - La Piedad
+  "52474": Mexico - Lagos De Mo
+  "52753": Mexico - Lazaro Card
+  "52477": Mexico - Leon
+  "52284": Mexico - Lerdo De Te
+  "52728": Mexico - Lerma
+  "52821": Mexico - Linares
+  "52668": Mexico - Los Mochis
+  "52354": Mexico - Los Reyes
+  "52632": Mexico - Magdalena
+  "52836": Mexico - Manuel
+  "52314": Mexico - Manzanillo
+  "52232": Mexico - Martinez de
+  "52868": Mexico - Matamoros
+  "52488": Mexico - Matehuala
+  "52623": Mexico - Mazatan
+  "52669": Mexico - Mazatlan
+  "52999": Mexico - Merida
+  "52686": Mexico - Mexicali
+  "5255": Mexico - Mexico City
+  "52922": Mexico - Minatitlan
+  "52866": Mexico - Monclova
+  "52826": Mexico - Montemorelo
+  "5281": Mexico - Monterrey
+  "52443": Mexico - Morelia
+  "52445": Mexico - Moroleon
+  "52634": Mexico - Nacozari
+  "52642": Mexico - Navojoa
+  "52631": Mexico - Nogales
+  "52636": Mexico - Nuevo Casas
+  "52867": Mexico - Nuevo Lared
+  "52951": Mexico - Oaxaca
+  "52392": Mexico - Ocotlan
+  "52968": Mexico - Ocozocuautl
+  "52626": Mexico - Ojinaga
+  "52741": Mexico - Ometepec
+  "52272": Mexico - Orizaba
+  "52771": Mexico - Pachuca
+  "52916": Mexico - Palenque
+  "52627": Mexico - Parral
+  "52842": Mexico - Parras De L
+  "52434": Mexico - Patzcuaro
+  "52469": Mexico - Penjamo
+  "52758": Mexico - Petatlan
+  "52878": Mexico - Piedras Neg
+  "52984": Mexico - Playadel Ca
+  "52782": Mexico - Poza Rica
+  "52222": Mexico - Puebla
+  "52638": Mexico - Puerto Pena
+  "52322": Mexico - Puerto Vall
+  "52438": Mexico - Puruandiro
+  "52442": Mexico - Queretaro
+  "52616": Mexico - Quintin
+  "52899": Mexico - Reynosa
+  "52498": Mexico - Rio Grande
+  "52487": Mexico - Rio Verde
+  "52661": Mexico - Rosarito
+  "52861": Mexico - Sabinas
+  "52353": Mexico - Sahuayo
+  "52464": Mexico - Salamanca
+  "52844": Mexico - Saltillo
+  "52466": Mexico - Salvatierra
+  "52967": Mexico - San Cristob
+  "52986": Mexico - San Felipe
+  "52841": Mexico - San Fernand
+  "52476": Mexico - San Francis
+  "52624": Mexico - San Jose
+  "52381": Mexico - San Jose De
+  "52427": Mexico - San Juan De
+  "52468": Mexico - San Luis De
+  "52444": Mexico - San Luis Po
+  "52653": Mexico - San Luis Ri
+  "52248": Mexico - San Martin
+  "52415": Mexico - San Miguel
+  "52641": Mexico - Santa Ana
+  "52713": Mexico - Santiago
+  "52323": Mexico - Santiago Ix
+  "52674": Mexico - Santiago Pa
+  "52472": Mexico - Silao
+  "52384": Mexico - Tala
+  "52833": Mexico - Tampico
+  "52962": Mexico - Tapachula
+  "52762": Mexico - Taxco
+  "52665": Mexico - Tecate
+  "52313": Mexico - Tecoman
+  "52742": Mexico - Tecpan
+  "52389": Mexico - Tecuala
+  "52238": Mexico - Tehuacan
+  "52736": Mexico - Teloloapan
+  "52714": Mexico - Tenancingo
+  "52378": Mexico - Tepatitlan
+  "52311": Mexico - Tepic
+  "52374": Mexico - Tequila
+  "52595": Mexico - Texcoco
+  "52231": Mexico - Teziutlan
+  "52997": Mexico - Ticul
+  "52664": Mexico - Tijuana
+  "52751": Mexico - Tilzapotla
+  "52754": Mexico - Tixtla
+  "52779": Mexico - Tizayuca
+  "52288": Mexico - Tlacotalpan
+  "52757": Mexico - Tlalpa
+  "52246": Mexico - Tlaxcala
+  "52722": Mexico - Toluca
+  "52871": Mexico - Torreon
+  "52773": Mexico - Tula
+  "52775": Mexico - Tulancingo
+  "52783": Mexico - Tuxpan
+  "52287": Mexico - Tuxtepec
+  "52961": Mexico - Tuxtla Guti
+  "52452": Mexico - Uruapan
+  "52726": Mexico - Valle De Br
+  "52229": Mexico - Veracruz
+  "52834": Mexico - Victoria
+  "52965": Mexico - Villa Flore
+  "52993": Mexico - Villahermos
+  "52356": Mexico - Yurecuaro
+  "52436": Mexico - Zacapu
+  "52492": Mexico - Zacatecas
+  "52351": Mexico - Zamora
+  "52755": Mexico - Zihuatanejo
+  "52451": Mexico - Zinapecuaro
+  "52715": Mexico - Zitacuaro
+  "52591": Mexico - Zumpango
+:us_nationalld:
+  "1": US
+  "1334": US - Alabama
+  "1256": US - Alabama
+  "1251": US - Alabama
+  "1205": US - Alabama
+  "1907": US - Alaska
+  "1520": US - Arizona
+  "1623": US - Arizona
+  "1480": US - Arizona
+  "1928": US - Arizona
+  "1602": US - Arizona
+  "1870": US - Arkansas
+  "1479": US - Arkansas
+  "1501": US - Arkansas
+  "1209": US - California
+  "1213": US - California
+  "1310": US - California
+  "1323": US - California
+  "1408": US - California
+  "1949": US - California
+  "1916": US - California
+  "1415": US - California
+  "1619": US - California
+  "1925": US - California
+  "1909": US - California
+  "1510": US - California
+  "1831": US - California
+  "1858": US - California
+  "1818": US - California
+  "1707": US - California
+  "1714": US - California
+  "1760": US - California
+  "1650": US - California
+  "1805": US - California
+  "1661": US - California
+  "1562": US - California
+  "1559": US - California
+  "1530": US - California
+  "1626": US - California
+  "1303": US - Colorado
+  "1970": US - Colorado
+  "1719": US - Colorado
+  "1720": US - Colorado
+  "1959": US - Connecticut
+  "1860": US - Connecticut
+  "1203": US - Connecticut
+  "1302": US - Delaware
+  "1689": US - Florida
+  "1407": US - Florida
+  "1754": US - Florida
+  "1772": US - Florida
+  "1386": US - Florida
+  "1352": US - Florida
+  "1239": US - Florida
+  "1904": US - Florida
+  "1305": US - Florida
+  "1321": US - Florida
+  "1786": US - Florida
+  "1561": US - Florida
+  "1941": US - Florida
+  "1497": US - Florida
+  "1850": US - Florida
+  "1727": US - Florida
+  "1954": US - Florida
+  "1863": US - Florida
+  "1813": US - Florida
+  "1404": US - Georgia
+  "1706": US - Georgia
+  "1229": US - Georgia
+  "1912": US - Georgia
+  "1470": US - Georgia
+  "1770": US - Georgia
+  "1478": US - Georgia
+  "1678": US - Georgia
+  "1808": US - Hawaii
+  "1208": US - Idaho
+  "1217": US - Illinois
+  "1708": US - Illinois
+  "1498": US - Illinois
+  "1773": US - Illinois
+  "1224": US - Illinois
+  "1847": US - Illinois
+  "1309": US - Illinois
+  "1630": US - Illinois
+  "1815": US - Illinois
+  "1618": US - Illinois
+  "1312": US - Illinois
+  "1812": US - Indiana
+  "1317": US - Indiana
+  "1219": US - Indiana
+  "1574": US - Indiana
+  "1260": US - Indiana
+  "1765": US - Indiana
+  "1563": US - Iowa
+  "1319": US - Iowa
+  "1641": US - Iowa
+  "1712": US - Iowa
+  "1515": US - Iowa
+  "1785": US - Kansas
+  "1620": US - Kansas
+  "1913": US - Kansas
+  "1316": US - Kansas
+  "1859": US - Kentucky
+  "1502": US - Kentucky
+  "1270": US - Kentucky
+  "1606": US - Kentucky
+  "1985": US - Louisiana
+  "1504": US - Louisiana
+  "1337": US - Louisiana
+  "1225": US - Louisiana
+  "1318": US - Louisiana
+  "1207": US - Maine
+  "1410": US - Maryland
+  "1443": US - Maryland
+  "1301": US - Maryland
+  "1240": US - Maryland
+  "1413": US - Massachusetts
+  "1508": US - Massachusetts
+  "1351": US - Massachusetts
+  "1781": US - Massachusetts
+  "1774": US - Massachusetts
+  "1617": US - Massachusetts
+  "1978": US - Massachusetts
+  "1339": US - Massachusetts
+  "1857": US - Massachusetts
+  "1313": US - Michigan
+  "1517": US - Michigan
+  "1734": US - Michigan
+  "1586": US - Michigan
+  "1616": US - Michigan
+  "1906": US - Michigan
+  "1269": US - Michigan
+  "1810": US - Michigan
+  "1248": US - Michigan
+  "1947": US - Michigan
+  "1989": US - Michigan
+  "1231": US - Michigan
+  "1952": US - Minnesota
+  "1651": US - Minnesota
+  "1763": US - Minnesota
+  "1218": US - Minnesota
+  "1320": US - Minnesota
+  "1507": US - Minnesota
+  "1612": US - Minnesota
+  "1228": US - Mississippi
+  "1601": US - Mississippi
+  "1662": US - Mississippi
+  "1417": US - Missouri
+  "1314": US - Missouri
+  "1660": US - Missouri
+  "1636": US - Missouri
+  "1573": US - Missouri
+  "1816": US - Missouri
+  "1557": US - Missouri
+  "1406": US - Montana
+  "1308": US - Nebraska
+  "1402": US - Nebraska
+  "1702": US - Nevada
+  "1775": US - Nevada
+  "1603": US - New Hampshire
+  "1862": US - New Jersey
+  "1609": US - New Jersey
+  "1732": US - New Jersey
+  "1973": US - New Jersey
+  "1201": US - New Jersey
+  "1848": US - New Jersey
+  "1856": US - New Jersey
+  "1908": US - New Jersey
+  "1551": US - New Jersey
+  "1505": US - New Mexico
+  "1575": US - New Mexico
+  "1631": US - New York
+  "1315": US - New York
+  "1212": US - New York
+  "1585": US - New York
+  "1516": US - New York
+  "1607": US - New York
+  "1518": US - New York
+  "1914": US - New York
+  "1347": US - New York
+  "1646": US - New York
+  "1917": US - New York
+  "1718": US - New York
+  "1716": US - New York
+  "1845": US - New York
+  "1919": US - North Carolina
+  "1828": US - North Carolina
+  "1910": US - North Carolina
+  "1980": US - North Carolina
+  "1704": US - North Carolina
+  "1984": US - North Carolina
+  "1336": US - North Carolina
+  "1252": US - North Carolina
+  "1701": US - North Dakota
+  "1440": US - Ohio
+  "1937": US - Ohio
+  "1234": US - Ohio
+  "1513": US - Ohio
+  "1419": US - Ohio
+  "1567": US - Ohio
+  "1614": US - Ohio
+  "1216": US - Ohio
+  "1740": US - Ohio
+  "1330": US - Ohio
+  "1380": US - Ohio
+  "1580": US - Oklahoma
+  "1405": US - Oklahoma
+  "1918": US - Oklahoma
+  "1503": US - Oregon
+  "1541": US - Oregon
+  "1971": US - Oregon
+  "1484": US - Pennsylvania
+  "1835": US - Pennsylvania
+  "1412": US - Pennsylvania
+  "1267": US - Pennsylvania
+  "1814": US - Pennsylvania
+  "1878": US - Pennsylvania
+  "1610": US - Pennsylvania
+  "1215": US - Pennsylvania
+  "1717": US - Pennsylvania
+  "1570": US - Pennsylvania
+  "1445": US - Pennsylvania
+  "1724": US - Pennsylvania
+  "1401": US - Rhode Island
+  "1864": US - South Carolina
+  "1803": US - South Carolina
+  "1843": US - South Carolina
+  "1605": US - South Dakota
+  "1423": US - Tennessee
+  "1901": US - Tennessee
+  "1615": US - Tennessee
+  "1865": US - Tennessee
+  "1931": US - Tennessee
+  "1731": US - Tennessee
+  "1936": US - Texas
+  "1210": US - Texas
+  "1325": US - Texas
+  "1956": US - Texas
+  "1281": US - Texas
+  "1214": US - Texas
+  "1972": US - Texas
+  "1979": US - Texas
+  "1254": US - Texas
+  "1940": US - Texas
+  "1903": US - Texas
+  "1432": US - Texas
+  "1817": US - Texas
+  "1430": US - Texas
+  "1512": US - Texas
+  "1713": US - Texas
+  "1806": US - Texas
+  "1682": US - Texas
+  "1830": US - Texas
+  "1469": US - Texas
+  "1832": US - Texas
+  "1409": US - Texas
+  "1361": US - Texas
+  "1435": US - Utah
+  "1801": US - Utah
+  "1802": US - Vermont
+  "1757": US - Virginia
+  "1804": US - Virginia
+  "1434": US - Virginia
+  "1276": US - Virginia
+  "1571": US - Virginia
+  "1703": US - Virginia
+  "1540": US - Virginia
+  "1564": US - Washington
+  "1206": US - Washington
+  "1509": US - Washington
+  "1253": US - Washington
+  "1360": US - Washington
+  "1425": US - Washington
+  "1202": US - Washington DC
+  "1304": US - West Virginia
+  "1920": US - Wisconsin
+  "1608": US - Wisconsin
+  "1715": US - Wisconsin
+  "1262": US - Wisconsin
+  "1414": US - Wisconsin
+  "1307": US - Wyoming
+  "1780": Canada - Alberta
+  "1403": Canada - Alberta (so
+  "1250": Canada - British Col
+  "1604": Canada - British Col
+  "1778": Canada - British Col
+  "1204": Canada - Manitoba
+  "1514": Canada - Montreal
+  "1506": Canada - New Brunswi
+  "1709": Canada - Newfoundlan
+  "1902": Canada - Nova Scotia
+  "1613": Canada - Ontario
+  "1519": Canada - Ontario
+  "1705": Canada - Ontario
+  "1807": Canada - Ontario
+  "1416": Canada - Ontario (To
+  "1450": Canada - Quebec
+  "1819": Canada - Quebec
+  "1418": Canada - Quebec (Que
+  "1306": Canada - Saskatchewa
+  "1905": Canada - Toronto (On
+  "1289": Canada - Toronto (On
+  "1647": Canada - Toronto (On
+  "1867": Canada - Yukon & NW

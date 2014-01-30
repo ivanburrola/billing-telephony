@@ -27,4 +27,5 @@ gem "resque"
 # For debugging
 gem "pry"
 
-
+# For code profiling
+gem "ruby-prof"
