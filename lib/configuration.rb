@@ -22,6 +22,8 @@ Configuration = OpenStruct.new(
 	call_types: {
 		americana: [],
 		mexicana: []
+	},
+	call_type_names: {
 	}
 )
 

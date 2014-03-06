@@ -38,5 +38,23 @@ module CustomerLogger
   end
 end
 
+module DataLogger
+  def log(msg)
+    Resque.logger.log(Logger::INFO, "DATA_BILLING :: #{msg}")
+  end
+end
+
+class Hash
+  def except(*keys)
+    self.select{ |k, v| !keys.include?(k) }
+  end
+end
+
+class Array
+  def hashes_merge
+    self.inject({}){ |i, j| i.merge(j) }
+  end
+end
+
 
 

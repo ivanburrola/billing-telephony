@@ -29,3 +29,10 @@ gem "pry"
 
 # For code profiling
 gem "ruby-prof"
+
+# Excel generation
+gem "axlsx"
+
+# Mechanize
+gem "mechanize"
+

@@ -2,8 +2,10 @@
 
 require 'resque/tasks'
 require 'resque'
+require 'pry'
 
 require './lib/customer_bill_job.rb'
+require './lib/data_billing_job.rb'
 
 Resque.logger = Logger.new(STDOUT)
 Resque.logger.level = Logger::INFO

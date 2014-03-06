@@ -50,4 +50,24 @@ Configuration.config do |config|
 		:mx_tollfreemx,
 		:mx_tollfreeus
 	]
+
+	config.call_type_names = {
+		us_local: "US/Canada Local Calls",
+		us_nationalld: "US/Canada Domestic Long Distance",
+		us_mexicold: "US/Canada to Mexico",
+		us_mexicomobilejrz: "US/Canada to Juarez Mobile",
+		us_mexicomobile: "US/Canada to Mexico Mobile",
+		us_mexicojuarez: "US/Canada to Juarez Land Line",
+		us_tollfree: "US/Canada Toll Free Calls",
+		us_mexicotollfree: "US/Canada to Mexico Toll Free Numbers",
+		mx_locales: "Mexico Local Calls",
+		mx_cellocal: "Mexico Juarez Mobile",
+		mx_celnacional: "Mexico National Mobile",
+		mx_ldnacional: "Mexico Domestic Long Distance",
+		mx_uscanada: "Mexico to USA/Canada",
+		mx_tollfreemx: "Mexico Toll Free Calls",
+		mx_tollfreeus: "Mexico to USA/Canada Toll Free Numbers",
+		international: "International",
+		inbound: "Inbound"
+	}
 end
