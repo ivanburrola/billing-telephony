@@ -25,7 +25,9 @@ namespace :app do
 		desc "List failed Resque jobs"
 		task :list do
 			puts "List of failed retry jobs:"
-			Resque::Failure.all(0, Resque::Failure.count).each do |failure|
+			failures = Resque::Failure.all(0, Resque::Failure.count)
+			failures = [ failures ] unless failures.class == Array
+			failures.each do |failure|
 				puts "-"*80
 				puts failure["failed_at"]
 				puts "-"*80
@@ -37,7 +39,9 @@ namespace :app do
 		desc "Brief list of failed Resque jobs"
 		task :brief do
 			puts "Brief list of failed retry jobs:"
-			Resque::Failure.all(0, Resque::Failure.count).each do |failure|
+			failures = Resque::Failure.all(0, Resque::Failure.count)
+			failures = [ failures ] unless failures.class == Array
+			failures.each do |failure|
 				failure.delete("backtrace")
 				puts "-"*80
 				puts failure["failed_at"]
@@ -51,11 +55,13 @@ namespace :app do
 		task :ids do
 			puts "Very short list of failed retry jobs showing their IDs:"
 			i = 0
-			Resque::Failure.all(0, Resque::Failure.count).each do |failure|
+			failures = Resque::Failure.all(0, Resque::Failure.count)
+			failures = [ failures ] unless failures.class == Array
+			failures.each do |failure|
+				i += 1
 				failure.delete("backtrace")
 				puts "-"*80
 				puts ("[ %12s ] - %20s - %s\n\n%s\n\n" % [ "JOB_ID=#{i}", failure["failed_at"], failure["exception"], pp_prefix(failure["payload"], "\t") ])
-				i += 1
 			end
 			puts "Done."
 		end

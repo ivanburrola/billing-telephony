@@ -4,6 +4,7 @@ require 'pry'
 
 require 'axlsx'
 require 'yaml'
+require 'json'
 require 'pp'
 
 require './lib/utils'
@@ -220,12 +221,20 @@ class TelephonyCustomerBiller
           regular_rate = find_rate(@rates[origin[:rate][:internal_id]], rec_info[:call_type])
         end
         plan_info = apply_plans(plans, record, rec_info) unless inbound_rate
+      else
+        puts
+        puts
+        puts "\t\t\t\033[1;31mWARNING - Unbillable: #{record.inspect}\033[0m"
+        puts
+        next
       end
 
       # TODO: See if we have an inbound billing charge, and use it.
 
       minutes = (record["duration"] / 60.0).ceil
+
       final_pricing = { minutes: minutes, call_type: rec_info[:call_type], trunk_type: trunk_type, currency: currency }
+
       if inbound_rate
         final_pricing.merge!(method: :inbound, total: minutes * rec_info[:price])
       elsif plan_info
