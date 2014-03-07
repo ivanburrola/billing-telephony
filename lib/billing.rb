@@ -24,8 +24,11 @@ class CustomerBilling < Customer::Base
     log "Voice Billing #{self.inspect}..."
     tcb = TelephonyCustomerBiller.new(customer_id: @customer_id, year: @year, month: @month)
     tcb.fetch_billing_info
-    filename = tcb.process
-    log "File name generated: #{filename}"
+    filenames = tcb.process
+    log "File names generated:"
+    filenames.each do |filename|
+      log "> #{filename}"
+    end
     log "Voice Billing Done."
     log "\n"
   end

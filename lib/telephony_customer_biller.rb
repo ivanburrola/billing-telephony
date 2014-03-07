@@ -116,28 +116,32 @@ class TelephonyCustomerBiller
         update_netsuite(origin)
       end
     end
-    puts
+    return @origins.map{ |origin_id, origin| origin[:printed_file_name] }
   end
 
   # ------------------------- PRIVATE STARTS HERE -------------------------
 	private
 
   def update_netsuite(origin)
+    puts "\t\t\tCreating MongDB Invoice Record..."
     inserted_row = @mongo.invoices.insert(
-      file_path: File.basename(origin[:printed_file_name]),
-      file_name: origin[:printed_file_name],
+      file_path: origin[:printed_file_name],
+      file_name: File.basename(origin[:printed_file_name]),
       total: origin[:total],
       subtotals: origin[:subtotals]
     )
     origin[:invoice_object_id] = inserted_row.to_s
-    NetSuite.call(
+    puts "\t\t\tDone."
+
+    puts "\t\t\tCalling NetSuite for invoice information upload..."
+    netsuite_return = NetSuite.call(
       action: :add_invoice,
       custrecord_tiv_origin: origin[:internal_id],
       custrecord_tiv_year: @year,
       custrecord_tiv_month: @month,
-      custrecord_tiv_gen_date: Time.now,
+      custrecord_tiv_gen_date: Time.now.strftime("%Y/%m/%d %H:%M:%S %z"),
       custrecord_tiv_total: origin[:total],
-      custrecord_tiv_currency: @rates[origin[:rate][:internal_id]][:currency][:name],
+      custrecord_tiv_currency: @rates[origin[:rate][:internal_id]][:currency][:internal_id],
       custrecord_tiv_invoice_object_id: origin[:invoice_object_id],
       custrecord_tiv_link: "http://itserver.transtelco.net/telephony_invoices/"+origin[:invoice_object_id]+"/download",
       custrecord_tiv_us_nationalld: (((origin[:subtotals]||{})[:us_nationalld]||{})[:amount]||0.0),
@@ -158,13 +162,21 @@ class TelephonyCustomerBiller
       custrecord_tiv_international: (((origin[:subtotals]||{})[:international]||{})[:amount]||0.0),
       custrecord_tiv_inbound: (((origin[:subtotals]||{})[:inbound]||{})[:amount]||0.0)
     )
+
+    output = ""
+    PP.pp(netsuite_return, output)
+    output = output.split(/\n/).map{|s|"\t\t\t"+s}.join("\n")
+    puts output
+    puts "\t\t\tDone."
   end
 
   def print_invoice(origin)
+    puts "\t\t\tPrinting invoice..."
     printer = TelephonyCustomerBillerPrinter.new(@customer, origin, @year, @month, cdrs)
     origin[:printed_file_name] = printer.print
     origin[:subtotals] = (printer.totals||[]).map{ |t| { t["pricing.final_pricing.call_type"].to_sym => t.except("pricing.final_pricing.call_type").symboliser } }.inject({}){ |i, j| i.merge(j) }
     origin[:total] = origin[:subtotals].values.map{ |st| st[:amount] }.inject(0.0){ |i, j| i+j }
+    puts "\t\t\tDone."
     printer
   end
 
