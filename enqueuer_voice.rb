@@ -1,5 +1,18 @@
 #!/usr/bin/env ruby
 
+RVM_GLOBAL="ruby-2.0.0-p353@global"
+RVM_STRING="ruby-2.0.0-p353@mediator"
+
+ENV["rvm_use_flag"]="1"
+ENV["GEM_HOME"]="/usr/local/rvm/gems/"+RVM_STRING
+ENV["PATH"]="/usr/local/rvm/gems/"+RVM_STRING+"/bin:"+(ENV["PATH"]||'')
+ENV["rvm_env_string"]=RVM_STRING
+ENV["GEM_PATH"]="/usr/local/rvm/gems/"+RVM_STRING+":/usr/local/rvm/gems/"+RVM_GLOBAL
+
+require 'fileutils'
+
+FileUtils.cd('/opt/mediator')
+
 require 'pp'
 require 'pry'
 require 'resque'
