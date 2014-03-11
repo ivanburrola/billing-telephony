@@ -10,6 +10,19 @@ end
 class QueuerData
   def self.work(options={})
 
+    if !options[:year] or !options[:month]
+        puts "Overriding year/month combination."
+        currdate = Time.now
+        if currdate.month == 1
+            options[:year] = currdate.year - 1
+            options[:month] = 12
+        else
+            options[:year] = currdate.year
+            options[:month] = currdate.month - 1
+        end
+        puts "Set year/month to #{options[:year]}/#{options[:month]}"
+    end
+
     options[:year] = Time.now.year unless options[:year]
     options[:month] = Time.now.month unless options[:month]
     options[:customer_ids] = nil unless options[:customer_ids]

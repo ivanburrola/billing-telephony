@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/local/rvm/rubies/ruby-2.0.0-p353/bin/ruby
 
 RVM_GLOBAL="ruby-2.0.0-p353@global"
 RVM_STRING="ruby-2.0.0-p353@mediator"
@@ -21,8 +21,15 @@ require './lib/queuer_voice'
 
 customer_ids = ENV["CUSTOMER_IDS"] ? ENV["CUSTOMER_IDS"].split(/,/).map{ |id| id.strip.to_i } : nil
 
+puts Time.now.strftime("%Y-%m-%d %H:%M:%S")
+puts "=================================="
+
 if ENV["YEAR"] and ENV["MONTH"]
 	QueuerVoice.work(customer_ids: customer_ids, year: ENV["YEAR"].strip.to_i, month: ENV["MONTH"].strip.to_i)
 else
 	QueuerVoice.work(customer_ids: customer_ids)
 end
+
+puts
+puts
+

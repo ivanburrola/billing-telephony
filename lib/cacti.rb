@@ -24,7 +24,7 @@ class CactiExtract
       full = YAML.load(open(local_test_data_fname).read)
       puts "Done."
     else
-      puts "Fetching data from Cacti..."
+      puts "Fetching data from Cacti [#{login_uri}]..."
       agent = Mechanize.new
       page = agent.get(login_uri)
       login_form = page.form('login')
