@@ -29,6 +29,8 @@ class DataBilling
     @graph_def = (options[:graph_def]||'').strip.downcase
     @pricing_def = (options[:pricing_def]||'').strip.downcase
 
+    @currency = options[:currency]
+
     @year = (options[:year]||'').to_s.strip.downcase
     @month = (options[:month]||'').to_s.strip.downcase
     @logger = options[:logger].nil? ? Logger.new(STDOUT) : options[:logger]
@@ -62,6 +64,7 @@ class DataBilling
     @mongo_client = Mongo::MongoClient.new("localhost", 27017, pool_size: 15, pool_timeout: 10, logger: @mongo_logger)
     @mongo_db = @mongo_client.db("data_billing")
     @mongo_records = @mongo_db.collection(@collection_name)
+    @mongo_invoices = @mongo_db.collection("data_invoices")
     @fetched = false
   end
 
@@ -72,7 +75,7 @@ class DataBilling
   end
 
   def process
-    results = analyze
+    @results = analyze
     printer = DataBillingPrinter.new(
       customer_id: @customer_id,
       customer_name: @customer_name,
@@ -86,23 +89,63 @@ class DataBilling
       headers: @headers,
       inbound_columns: @inbound_columns,
       outbound_columns: @outbound_columns,
-      results: results
+      results: @results
     )
 
-    final_output = printer.print
+    @final_output = printer.print
 
     @mongo_records.drop
 
     update_netsuite
 
-    return final_output
+    return @final_output
   end
 
   # ------------------------- PRIVATE STARTS HERE -------------------------
   private
 
   def update_netsuite
-    # Update NetSuite here...
+    puts "\t\t\tCreating MongDB Invoice Record..."
+
+    @mongo_invoices.update({ customer_id: @customer_id, year: @year.to_i, month: @month.to_i }, { "$set" => { current: false } }, { multi: true })
+
+    inserted_row = @mongo_invoices.insert(
+      current: true,
+      customer_id: @customer_id,
+      customer_name: @customer_name,
+      currency_name: @currency["name"],
+      currency_id: @currency["internalid"],
+      graph_def: @graph_def,
+      pricing_def: @pricing_def,
+      year: @year.to_i,
+      month: @month.to_i,
+      graph_title: @title,
+      results: @results,
+      file_path: @final_output,
+      file_name: File.basename(@final_output),
+      gen_date: Time.now,
+    )
+    puts "\t\t\tDone."
+
+    puts "\t\t\tCalling NetSuite for invoice information upload..."
+    netsuite_return = NetSuite.call(
+      action: :add_data_invoice,
+      custrecord_tid_customer: @customer_id,
+      custrecord_tid_year: @year,
+      custrecord_tid_month: @month,
+      custrecord_tid_gen_date: Time.now.strftime("%Y/%m/%d %H:%M:%S %z"),
+      custrecord_tid_mbps: @results[:mbs],
+      custrecord_tid_price_per_mbps: @results[:price_per_mb],
+      custrecord_tid_total: @results[:total],
+      custrecord_tid_currency:  @currency["internalid"],
+      custrecord_tid_invoice_object_id: inserted_row.to_s
+    )
+
+    output = ""
+    PP.pp(netsuite_return, output)
+    output = output.split(/\n/).map{|s|"\t\t\t"+s}.join("\n")
+    puts output
+    puts "\t\t\tDone."
   end
 
   def analyze

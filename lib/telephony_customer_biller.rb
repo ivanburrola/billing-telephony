@@ -126,7 +126,10 @@ class TelephonyCustomerBiller
   def update_netsuite(origin)
     puts "\t\t\tCreating MongDB Invoice Record..."
 
+    @mongo.invoices.update({ customer_id: @customer[:id].to_i, year: @year, month: @month }, { "$set" => { current: false } }, { multi: true })
+
     inserted_row = @mongo.invoices.insert(
+      current: true,
       customer_name: @customer[:name],
       customer_id: @customer[:id].to_i,
       origin_id: origin[:internal_id],
@@ -136,7 +139,8 @@ class TelephonyCustomerBiller
       file_path: origin[:printed_file_name],
       file_name: File.basename(origin[:printed_file_name]),
       total: origin[:total],
-      subtotals: origin[:subtotals]
+      subtotals: origin[:subtotals],
+      gen_date: Time.now,
     )
     origin[:invoice_object_id] = inserted_row.to_s
     puts "\t\t\tDone."

@@ -49,7 +49,8 @@ class QueuerData
             "internalId",
             "entityid",
             "custentity_tdata_cacti_ids",
-            "custentity_tdata_price_per_mb_def"
+            "custentity_tdata_price_per_mb_def",
+            "custentity_tdata_currency"
         ]
     )
 
@@ -58,7 +59,7 @@ class QueuerData
       if customer_list.size > 0
         customer_list.each do |customer|
           puts "Enqueuing DATA Customer ID: #{customer[:id]} - #{customer[:columns][:entityid]} for #{"%04i" % options[:year]}/#{"%02i" % options[:month]}"
-          Resque.enqueue DataBillJob, customer_id: customer[:id], customer_name: customer[:columns][:entityid], year: options[:year], month: options[:month], graph_def: customer[:columns][:custentity_tdata_cacti_ids], pricing_def: CGI.unescape_html(customer[:columns][:custentity_tdata_price_per_mb_def])
+          Resque.enqueue DataBillJob, customer_id: customer[:id], customer_name: customer[:columns][:entityid], currency: customer[:columns][:custentity_tdata_currency], year: options[:year], month: options[:month], graph_def: customer[:columns][:custentity_tdata_cacti_ids], pricing_def: CGI.unescape_html(customer[:columns][:custentity_tdata_price_per_mb_def])
         end
         puts "Done."
       else
